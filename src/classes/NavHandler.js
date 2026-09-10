@@ -1,42 +1,34 @@
-export class NavHandler{
-    constructor(){
-        this.CurrentLink = window.location.href;
-        this.protocol = window.location.protocol;
-        this.Linkorigin = window.location.origin;
-        this.PageObjectID = null;
+export class NavHandler {
+  constructor () {
+    this.CurrentLink = window.location.href
+    this.protocol = window.location.protocol
+    this.Linkorigin = window.location.origin
+    this.PageObjectID = null
 
-        console.log(window.location);
-    }
+    console.log(window.location)
+  }
 
-    switchPage(page){
-        let params = new URLSearchParams(document.location.search);
-    }
+  switchPage (page) {
+    let params = new URLSearchParams(document.location.search)
 
-    GetCurrentPoint(){
-        this.CheckifCurrentPointIsSet();
+    params.set('page', page)
+    window.history.pushState({}, '', `?${params.toString()}`)
+  }
 
-        let params = new URLSearchParams(document.location.search);
-        let page = params.get("page")
+  GetCurrentPoint () {
+    this.CheckifCurrentPointIsSet()
 
-        if(!page){
-            this.switchPage("aboutme");
-            return this.GetCurrentPoint();
-        }
-            
-        return page;
-    }
+    let params = new URLSearchParams(document.location.search)
 
-    GetObjectID(){
+    return params.get("page")
+  }
 
-    }
+  GetObjectID () {}
 
-    CheckifCurrentPointIsSet(){
-        const params = window.location.href.split("?")[1].split("&");
-
-        for(let i = 0; i < (params.length -1); i++){
-            if(params[i].search("page") !== -1){
-                this.switchPage("aboutme");
-            }
-        }
-    }
+  CheckifCurrentPointIsSet () {
+    // Instead of manually splitting, use URLSearchParams consistently
+    const nopageParam =
+      new URLSearchParams(window.location.search).get('page') === null
+    if (nopageParam === true) this.switchPage('aboutme')
+  }
 }

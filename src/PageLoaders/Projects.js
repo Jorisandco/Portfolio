@@ -1,10 +1,10 @@
 import { PageLoaderBase } from './PageLoaderBase.js'
 
-export class Aboutme extends PageLoaderBase {
+export class Projects extends PageLoaderBase {
   LoadPage () {
     // load everything like listeners and page
     document.querySelector('#app').innerHTML = `
-        <div>hi</div>
+        <div>MyPrjects</div>
     `
   }
 
