@@ -34,6 +34,6 @@ export class NavHandler {
     const nopageParam =
       new URLSearchParams(window.location.search).get('page') === null
 
-    if (nopageParam === true) this.switchPage('aboutme')
+    if (nopageParam) this.switchPage('aboutme')
   }
 }
