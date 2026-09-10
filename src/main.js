@@ -18,6 +18,6 @@ if (pages[currentPoint]) {
   pageInstance.LoadPage()
 } else {
   document.querySelector('#app').innerHTML = `
-        <div id="notfoundError">404 this page doesn't exsist</div>
+        <div id="notfoundError">404 this page doesn't exist</div>
     `
 }
