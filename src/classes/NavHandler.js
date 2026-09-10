@@ -31,7 +31,6 @@ export class NavHandler {
   }
 
   CheckifCurrentPointIsSet () {
-    // Instead of manually splitting, use URLSearchParams consistently
     const nopageParam =
       new URLSearchParams(window.location.search).get('page') === null
 
