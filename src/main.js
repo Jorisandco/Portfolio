@@ -1,3 +1,9 @@
-import './style.css';
+import './style.css'
+import { NavHandler } from './classes/NavHandler.js'
 
-document.querySelector('#app').innerHTML = ``;
+const Navigation = new NavHandler()
+
+document.querySelector('#app').innerHTML = ``
+
+if (Navigation.GetCurrentPoint() == 'aboutme') console.log("hi");
+
