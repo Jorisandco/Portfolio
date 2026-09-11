@@ -4,8 +4,8 @@
 }
 
 body {
-    background-color: rgb(28, 28, 87);
-    color: white;
+    color: black;
+    font-size: 25px;
 }
 
 #notfoundError {
@@ -18,9 +18,43 @@ body {
     align-items: center;
 }
 
-.PageContainer{
+.PageContainer {
     margin-top: 22px;
     width: 100vw;
     display: flex;
     justify-content: center;
+}
+
+.ProfileContainer {
+    padding: 20px;
+    display: flex;
+    width: 80%;
+    height: 50vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #e1e1e1;
+    border-radius: 24px;
+
+    #Profilephoto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        #Photo{
+            object-fit: cover;
+            border-radius: 24px;
+        }
+    }
+
+    #ProfileDescription {
+        background-color: #e8e8e8;
+        height: 70%;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 18px;
+    }
 }
