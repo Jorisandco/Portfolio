@@ -77,7 +77,7 @@ export class Aboutme extends PageLoaderBase {
                     </div>
                 </div>
             </div>
-            ${this.footer}
+<!--            ${this.footer}-->
         `
 
         this.loadPhotos()
