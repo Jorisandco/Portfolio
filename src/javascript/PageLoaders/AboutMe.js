@@ -1,5 +1,5 @@
 import {PageLoaderBase} from './PageLoaderBase.js'
-import profilepic from "../../assets/nick-widle-zootopia.gif"
+import profilepic from "../../assets/ProfilePicture.43.03.jpeg"
 import htmlIcon from "../../assets/Icons/html-5-svgrepo-com.svg"
 import cssIcon from "../../assets/Icons/css-3-svgrepo-com.svg"
 import JavascriptIcon from "../../assets/Icons/javascript-svgrepo-com.svg"
