@@ -35,13 +35,13 @@ body {
     height: 50vh;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #e1e1e1;
+    background-color: #c1d2ec;
     border-radius: 24px;
 
     #Profilephoto {
         display: flex;
         justify-content: center;
-        background-color: #e8e8e8;
+        background-color: #ffffff;
         align-items: center;
         width: 20%;
         border-radius: 18px;
@@ -52,12 +52,13 @@ body {
             border-radius: 24px;
             width: 88%;
             height: 88%;
+            aspect-ratio: 1 / 1;
         }
     }
 
     #ProfileDescription {
         border-radius: 18px;
-        background-color: #e8e8e8;
+        background-color: #ffffff;
         height: 70%;
         width: 60%;
         display: flex;
@@ -66,6 +67,7 @@ body {
         justify-content: center;
         align-items: flex-start;
         padding: 18px;
+        overflow-y: auto;
     }
 }
 
@@ -85,18 +87,14 @@ body {
             align-items: center;
             min-width: 200px;
             min-height: 80px;
-            background-color: #efefef;
+            background-color: #d3e5ff;
             border-radius: 24px;
-        }
-
-        .item:hover{
-            background-color: #e1e1e1;
-
         }
     }
 }
 
 .language-icon{
-    max-width: 50px;
-    height: auto;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
