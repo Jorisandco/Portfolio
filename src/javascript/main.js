@@ -1,4 +1,4 @@
-import './style.css'
+import '../styling/style.css'
 import { NavHandler } from './classes/NavHandler.js'
 import { Aboutme } from './PageLoaders/AboutMe.js'
 import { Projects } from './PageLoaders/Projects.js'

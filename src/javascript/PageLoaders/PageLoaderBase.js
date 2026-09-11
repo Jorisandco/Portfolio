@@ -1,11 +1,11 @@
 export class PageLoaderBase {
     constructor(){
         this.header = `
-            <header>this is a header</header>
+            <header id="header"><div id="logoContainer"></div><div id="Navigation"></div></header>
         `;
 
         this.footer = `
-            <footer>this is a footer</footer>
+            <footer id="footer">this is a footer</footer>
         `;
     }
 

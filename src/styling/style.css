@@ -1,14 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-color: rgb(28, 28, 87);
     color: white;
 }
 
-#notfoundError{
+#notfoundError {
     color: red;
     font-size: 100px;
     height: 100vh;
@@ -16,4 +16,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.PageContainer{
+    margin-top: 22px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
