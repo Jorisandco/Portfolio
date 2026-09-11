@@ -3,8 +3,6 @@ export class NavHandler {
     this.CurrentLink = window.location.href;
     this.protocol = window.location.protocol;
     this.Linkorigin = window.location.origin;
-
-    console.log(window.location);
   }
 
   switchPage (page, PageObjectID = null) {
