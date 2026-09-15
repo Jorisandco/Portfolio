@@ -4,8 +4,8 @@
 }
 
 body {
-    background-color: rgb(28, 28, 87);
-    color: white;
+    color: black;
+    font-size: 25px;
 }
 
 #notfoundError {
@@ -18,9 +18,81 @@ body {
     align-items: center;
 }
 
-.PageContainer{
+.PageContainer {
     margin-top: 22px;
     width: 100vw;
+    gap: 24px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ProfileContainer {
+    padding: 20px;
+    display: flex;
+    width: 70%;
+    height: 50vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #d3e5ff;
+    border-radius: 24px;
+
+    #Profilephoto {
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        align-items: center;
+        width: 20%;
+        border-radius: 18px;
+        padding: 12px;
+
+        #Photo {
+            object-fit: cover;
+            border-radius: 12px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    #ProfileDescription {
+        border-radius: 18px;
+        background-color: #ffffff;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 18px;
+        overflow-y: auto;
+    }
+}
+
+.experienceContainer {
+    width: 70%;
+
+    .codeLanguagesContainer{
+        padding: 5px;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .item{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            min-width: 200px;
+            min-height: 80px;
+            background-color: #d3e5ff;
+            border-radius: 24px;
+        }
+    }
+}
+
+.language-icon{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
