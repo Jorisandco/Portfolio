@@ -111,3 +111,7 @@ body {
         width: 20%;
     }
 }
+
+a{
+    cursor: pointer;
+}

@@ -21,6 +21,7 @@ export class PageLoaderBase {
     LoadPage(){
         // load everything like listeners and page
         document.getElementById(this.currentPage).style.color = "#2a456c"
+
         document.getElementById("about_me").addEventListener("click", () => {
             this.nav.switchPage("aboutme")
             window.location.reload()
