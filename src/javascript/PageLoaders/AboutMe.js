@@ -13,6 +13,7 @@ export class Aboutme extends PageLoaderBase {
     LoadPage() {
         // load everything like listeners and page
         let languagesHtml = ""
+        //  make sure to load them in with api later down the line for easier editing
         let languages = [
             {
                 icon: htmlIcon,
