@@ -96,3 +96,18 @@ body {
     height: 48px;
     object-fit: contain;
 }
+
+#header{
+    background-color: #d3e5ff;
+    display: flex;
+    padding: 12px;
+    #Navigation {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2%;
+        width: 80%;
+    }
+    #logoContainer{
+        width: 20%;
+    }
+}

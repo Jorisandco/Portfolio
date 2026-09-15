@@ -8,8 +8,14 @@ import PythonIcon from "../../assets/Icons/python-svgrepo-com.svg"
 import FlutterIcon from "../../assets/Icons/flutter-svgrepo-com.svg"
 import JavaIcon from "../../assets/Icons/java-svgrepo-com.svg"
 import VueIcon from "../../assets/Icons/vue-svgrepo-com.svg"
+import phpIcon from "../../assets/Icons/php-svgrepo-com.svg"
 
 export class Aboutme extends PageLoaderBase {
+    constructor(nav) {
+        super();
+        this.nav = nav
+    }
+
     LoadPage() {
         // load everything like listeners and page
         let languagesHtml = ""
@@ -44,6 +50,10 @@ export class Aboutme extends PageLoaderBase {
                 icon: VueIcon,
                 text: "Vue.js"
             },
+            {
+                icon: phpIcon,
+                text: "PHP"
+            }
         ]
 
         languages.forEach((language) => {
@@ -82,11 +92,7 @@ export class Aboutme extends PageLoaderBase {
         `
 
         this.loadPhotos()
-
-    }
-
-    UnloadPage() {
-        // remove page and unload listeners
+        super.LoadPage()
     }
 
     loadPhotos() {

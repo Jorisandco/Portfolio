@@ -1,6 +1,11 @@
 import { PageLoaderBase } from './PageLoaderBase.js'
 
 export class Projects extends PageLoaderBase {
+    constructor(nav) {
+        super(nav);
+        this.currentPage = "Projects"
+    }
+
   LoadPage () {
     // load everything like listeners and page
     document.querySelector('#app').innerHTML = `
@@ -8,6 +13,8 @@ export class Projects extends PageLoaderBase {
         <div>MyPrjects</div>
         ${this.footer}
     `
+
+      super.LoadPage()
   }
 
   UnloadPage () {
