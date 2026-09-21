@@ -2,7 +2,6 @@ import {loadPage} from "../loadpage.js";
 
 export class PageLoaderBase {
     constructor(nav) {
-        this.loader = null
         this.currentPage = "aboutme"
         this.abortController = null;
         this.header = `

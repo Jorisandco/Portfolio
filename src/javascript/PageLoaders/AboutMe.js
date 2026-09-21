@@ -99,6 +99,8 @@ export class Aboutme extends PageLoaderBase {
         // load actual photos
         const photoElement = document.getElementById("Photo")
 
+        photoElement.classList.add("skeleton")
         photoElement.src = profilepic
+        photoElement.classList.remove("skeleton")
     }
 }
