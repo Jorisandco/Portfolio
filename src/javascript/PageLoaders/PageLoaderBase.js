@@ -24,7 +24,7 @@ export class PageLoaderBase {
     LoadPage() {
         // load everything like listeners and page
         try {
-            document.getElementById(this.currentPage).style.color = "#2a456c"
+            document.getElementById(this.currentPage).classList.add("selected")
         } catch (e) {
             console.error("Page doesn't exist")
         }

@@ -3,7 +3,7 @@ import {PageLoaderBase} from './PageLoaderBase.js'
 export class NotFound extends PageLoaderBase {
     constructor(nav) {
         super(nav);
-        this.currentPage = null
+        this.currentPage = "none"
     }
 
     LoadPage() {
