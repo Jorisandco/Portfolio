@@ -16,8 +16,4 @@ export class Projects extends PageLoaderBase {
 
       super.LoadPage()
   }
-
-  UnloadPage () {
-    // remove page and unload listeners
-  }
 }

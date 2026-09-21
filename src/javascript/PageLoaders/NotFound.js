@@ -16,8 +16,4 @@ export class NotFound extends PageLoaderBase {
 
         super.LoadPage()
     }
-
-    UnloadPage() {
-        // remove page and unload listeners
-    }
 }
