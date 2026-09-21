@@ -47,9 +47,10 @@ export class PageLoaderBase {
                 }
             });
 
-            return true;
+            return {signal};
         } catch (e) {
-            return false;
+            console.error("failed to create listeners")
+            return null;
         }
     }
 
