@@ -121,6 +121,39 @@ a {
     cursor: pointer;
 }
 
-.selected{
+.selected {
     color: #006dff;
+}
+
+.project-element {
+    height: 250px;
+    width: 315px;
+    overflow: hidden;
+
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .name-container {
+        background-color: #d3e5ff;
+        position: relative;
+        padding: 10px;
+        transition: 0.8s;
+    }
+}
+
+.project-element:hover {
+    .name-container {
+        transform: translateY(-110%);
+        background-color: rgba(211, 229, 255, 0.3);
+    }
+}
+
+#random-selection {
+    padding: 20px;
+    display: flex;
+    gap: 24px;
 }
