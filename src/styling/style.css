@@ -157,3 +157,15 @@ a {
     display: flex;
     gap: 24px;
 }
+
+.pagination{
+    display: flex;
+
+    .page-number{
+        min-width: 28px;
+        background-color: #d3e5ff;
+        border: #b9d6ff 1px solid;
+        padding: 5px;
+        text-align: center;
+    }
+}
