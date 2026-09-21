@@ -156,17 +156,51 @@ a {
     padding: 20px;
     display: flex;
     gap: 24px;
+    width: 90vw;
 }
 
-.pagination{
+.pagination {
     display: flex;
+    width: 100%;
+    justify-content: center;
 
-    .page-number, .page-btn{
+    .page-number, .page-btn {
         min-width: 28px;
-        background-color: #d3e5ff;
+        background-color: white;
         border: #b9d6ff 1px solid;
         padding: 5px;
         text-align: center;
         cursor: pointer;
     }
+}
+
+#allProjects {
+    border-radius: 24px;
+    padding: 20px;
+    background-color: #d3e5ff;
+    width: 90vw;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#projects-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#projects {
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+#random-selection-inside{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }

@@ -5,7 +5,7 @@ export class Projects extends PageLoaderBase {
     constructor(nav) {
         super(nav);
         this.currentPage = "myProjects"
-        this.currentPageCount = 2
+        this.currentPageCount = 1
     }
 
     LoadPage() {
@@ -14,14 +14,20 @@ export class Projects extends PageLoaderBase {
         ${this.header}
         <div>
             <div>
-                <h1>
-                    Random selection
-                </h1>
-                <div id="random-selection">
-                    ${this.loadRandomProjects()}
+                <div id="random-selection-inside">
+                <div>
+                    <h1>
+                        Random selection
+                    </h1>
+                    <div id="random-selection">
+                        ${this.loadRandomProjects()}
+                    </div>
                 </div>
-                <div id="allProjects">
-
+                </div>
+                <div id="projects-container">
+                    <div id="allProjects">
+    
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,11 +58,15 @@ export class Projects extends PageLoaderBase {
         const projectContainer = document.querySelector("#allProjects")
 
         projectContainer.innerHTML = `
-            ${this.showAllProjects()}
+            <h1>
+              All my projects
+            </h1>
+            <div id="projects">
+                ${this.showAllProjects()}
+            </div>
             <div class="pagination">
-                <div class="page-btn" id="page-down"><</div>
+                
                 ${this.loadPageCount()}
-                <div class="page-btn" id="page-up">\></div>
             </div>
         `
 
@@ -81,15 +91,13 @@ export class Projects extends PageLoaderBase {
 
     loadPageCount() {
         let html = "";
-        let startPoint = this.currentPageCount
-        const maxPageCount = 10;
+        let startPoint = this.currentPageCount - 3
+        const maxPageCount = 1;
         const maximumPageination = this.currentPageCount + 3
         let maxNumber = maximumPageination <= maxPageCount ? maximumPageination : maxPageCount
 
-        if (startPoint === maxPageCount)
-            startPoint -= 5
-        else
-            startPoint -= 3
+        if (maxPageCount === 1)
+            return "";
 
         for (let i = startPoint; i <= maxNumber; i++) {
             if (i < 1)
@@ -107,7 +115,8 @@ export class Projects extends PageLoaderBase {
             html = `<div class="page-number">1</div>` + html
         }
 
-        return html
+
+        return "<div class=\"page-btn\" id=\"page-down\"><</div>" + html + "<div class=\"page-btn\" id=\"page-up\">></div>"
     }
 
     loadPaginationListeners() {
