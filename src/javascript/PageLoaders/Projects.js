@@ -3,7 +3,7 @@ import { PageLoaderBase } from './PageLoaderBase.js'
 export class Projects extends PageLoaderBase {
     constructor(nav) {
         super(nav);
-        this.currentPage = "Projects"
+        this.currentPage = "myProjects"
     }
 
   LoadPage () {

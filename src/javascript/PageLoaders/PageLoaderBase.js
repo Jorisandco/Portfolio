@@ -1,15 +1,17 @@
-export class PageLoaderBase {
-    constructor(nav){
-        this.listeners = []
+import {loadPage} from "../loadpage.js";
 
-        this.currentPage = "about_me"
+export class PageLoaderBase {
+    constructor(nav) {
+        this.loader = null
+        this.currentPage = "aboutme"
+        this.abortController = null;
         this.header = `
             <header id="header">
             <div id="logoContainer">logo</div>
             <div id="Navigation">
-            <a id="about_me"><div>About me</div></a>
-            <a id="Projects"><div>Projects</div></a>
-            <a id="Contact_me"><div>Contact me</div></a>
+            <a id="aboutme"><div>About me</div></a>
+            <a id="myProjects"><div>Projects</div></a>
+            <a id="Contactme"><div>Contact me</div></a>
             </div>
             </header>
         `;
@@ -20,38 +22,51 @@ export class PageLoaderBase {
         this.nav = nav
     }
 
-    LoadPage(){
+    LoadPage(loadPageFunction) {
         // load everything like listeners and page
-        document.getElementById(this.currentPage).style.color = "#2a456c"
+        try {
+            document.getElementById(this.currentPage).style.color = "#2a456c"
+        } catch (e) {
+            console.error("Page doesn't exist")
+        }
+
         this.addListeners()
 
+        this.loader = loadPageFunction
     }
 
-    addListeners(){
-        document.getElementById("about_me").addEventListener("click", () => {
-            this.BaseSwitch("aboutme")
-        })
-        document.getElementById("Projects").addEventListener("click", () => {
-            this.BaseSwitch("myProjects")
-        })
-        document.getElementById("Contact_me").addEventListener("click", () => {
-            this.BaseSwitch("Contactme")
-        })
+    addListeners() {
+        try {
+            // Instantiate a new AbortController per page lifecycle
+            this.abortController = new AbortController();
+            const {signal} = this.abortController;
+
+            const pages = ["aboutme", "myProjects", "Contactme"];
+
+            pages.forEach((page) => {
+                const Element = document.getElementById(page);
+                if (Element) {
+                    Element.addEventListener("click", () => this.BaseSwitch(page), {signal});
+                }
+            });
+
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 
-    UnloadPage(){
-        document.getElementById("about_me").removeEventListener("click", () => {
-            this.BaseSwitch("aboutme")
-        })
-        document.getElementById("Projects").removeEventListener("click", () => {
-            this.BaseSwitch("myProjects")
-        })
-        document.getElementById("Contact_me").removeEventListener("click", () => {
-            this.BaseSwitch("Contactme")
-        })
+    UnloadPage() {
+        if (this.abortController) {
+            // Unbinds ALL listeners attached with this controller's signal at once
+            this.abortController.abort();
+            this.abortController = null;
+        }
     }
 
-    BaseSwitch(page){
+    BaseSwitch(page) {
         this.nav.switchPage(page)
+        this.UnloadPage()
+        loadPage()
     }
 }

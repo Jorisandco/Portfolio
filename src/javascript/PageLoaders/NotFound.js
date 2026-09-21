@@ -1,4 +1,4 @@
-import { PageLoaderBase } from './PageLoaderBase.js'
+import {PageLoaderBase} from './PageLoaderBase.js'
 
 export class NotFound extends PageLoaderBase {
     constructor(nav) {
@@ -6,18 +6,18 @@ export class NotFound extends PageLoaderBase {
         this.currentPage = null
     }
 
-  LoadPage () {
-    // load everything like listeners and page
-    document.querySelector('#app').innerHTML = `
+    LoadPage() {
+        // load everything like listeners and page
+        document.querySelector('#app').innerHTML = `
         ${this.header}
                 <div id="notfoundError">404 this page doesn't exist</div>
         ${this.footer}
     `
 
-      addEventListener("click")
-  }
+        super.LoadPage()
+    }
 
-  UnloadPage () {
-    // remove page and unload listeners
-  }
+    UnloadPage() {
+        // remove page and unload listeners
+    }
 }
