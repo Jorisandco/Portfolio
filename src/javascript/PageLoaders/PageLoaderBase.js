@@ -21,7 +21,7 @@ export class PageLoaderBase {
         this.nav = nav
     }
 
-    LoadPage(loadPageFunction) {
+    LoadPage() {
         // load everything like listeners and page
         try {
             document.getElementById(this.currentPage).style.color = "#2a456c"
@@ -30,8 +30,6 @@ export class PageLoaderBase {
         }
 
         this.addListeners()
-
-        this.loader = loadPageFunction
     }
 
     addListeners() {
