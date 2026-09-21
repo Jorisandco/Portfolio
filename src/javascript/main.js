@@ -11,17 +11,21 @@ const pages = {
     none: NotFound
 }
 
-function loadPage() {
+function loadPage(pageIns = null) {
     const currentPoint = Navigation.GetCurrentPoint()
     let PageClass
 
+    if (pageIns !== null)
+        pageIns.UnloadPage()
+
     if (pages[currentPoint])
         PageClass = pages[currentPoint]
-    else
+    else {
         PageClass = pages["none"]
+        Navigation.switchPage("none")
+    }
 
     const pageInstance = new PageClass(Navigation)
-
     pageInstance.LoadPage()
 
     return pageInstance

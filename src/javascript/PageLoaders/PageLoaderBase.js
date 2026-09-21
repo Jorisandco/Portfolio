@@ -1,5 +1,7 @@
 export class PageLoaderBase {
     constructor(nav){
+        this.listeners = []
+
         this.currentPage = "about_me"
         this.header = `
             <header id="header">
@@ -21,18 +23,35 @@ export class PageLoaderBase {
     LoadPage(){
         // load everything like listeners and page
         document.getElementById(this.currentPage).style.color = "#2a456c"
+        this.addListeners()
 
+    }
+
+    addListeners(){
         document.getElementById("about_me").addEventListener("click", () => {
-            this.nav.switchPage("aboutme")
-            window.location.reload()
+            this.BaseSwitch("aboutme")
         })
         document.getElementById("Projects").addEventListener("click", () => {
-            this.nav.switchPage("myProjects")
-            window.location.reload()
+            this.BaseSwitch("myProjects")
         })
         document.getElementById("Contact_me").addEventListener("click", () => {
-            this.nav.switchPage("Contactme")
-            window.location.reload()
+            this.BaseSwitch("Contactme")
         })
+    }
+
+    UnloadPage(){
+        document.getElementById("about_me").removeEventListener("click", () => {
+            this.BaseSwitch("aboutme")
+        })
+        document.getElementById("Projects").removeEventListener("click", () => {
+            this.BaseSwitch("myProjects")
+        })
+        document.getElementById("Contact_me").removeEventListener("click", () => {
+            this.BaseSwitch("Contactme")
+        })
+    }
+
+    BaseSwitch(page){
+        this.nav.switchPage(page)
     }
 }

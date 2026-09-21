@@ -14,7 +14,7 @@ export class NotFound extends PageLoaderBase {
         ${this.footer}
     `
 
-      super.LoadPage()
+      addEventListener("click")
   }
 
   UnloadPage () {
