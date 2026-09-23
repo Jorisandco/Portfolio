@@ -14,16 +14,6 @@ export class Projects extends PageLoaderBase {
         ${this.header}
         <div>
             <div>
-                <div id="random-selection-inside">
-                <div>
-                    <h1>
-                        Random selection
-                    </h1>
-                    <div id="random-selection">
-                        ${this.loadRandomProjects()}
-                    </div>
-                </div>
-                </div>
                 <div id="projects-container">
                     <div id="allProjects">
     
@@ -36,22 +26,6 @@ export class Projects extends PageLoaderBase {
 
         this.loadProjects()
         super.LoadPage()
-    }
-
-    loadRandomProjects() {
-        let html = "";
-        const results = [
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-        ]
-
-        results.forEach((result) => {
-            html += `<div class="project-element"><img src="${result.image}"> <div class="name-container">${result.name}</div></div>`
-        })
-
-        return html
     }
 
     loadProjects() {
@@ -80,10 +54,38 @@ export class Projects extends PageLoaderBase {
             {name: "Name", image: nick},
             {name: "Name", image: nick},
             {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
+            {name: "Name", image: nick},
         ]
 
         results.forEach((result) => {
-            html += `<div class="project-element"><img src="${result.image}"> <div class="name-container">${result.name}</div></div>`
+            html += `<div class="project-element all-projects"><img src="${result.image}"> <div class="name-container">${result.name}</div></div>`
         })
 
         return html
@@ -110,11 +112,8 @@ export class Projects extends PageLoaderBase {
 
         if (maximumPageination < maxPageCount)
             html += `<div class="page-number">${maxPageCount}</div>`
-        if ((startPoint) > 1) {
-            console.log("hi")
+        if ((startPoint) > 1)
             html = `<div class="page-number">1</div>` + html
-        }
-
 
         return "<div class=\"page-btn\" id=\"page-down\"><</div>" + html + "<div class=\"page-btn\" id=\"page-up\">></div>"
     }
