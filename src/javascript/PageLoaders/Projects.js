@@ -49,40 +49,7 @@ export class Projects extends PageLoaderBase {
 
     showAllProjects() {
         let html = "";
-        const results = [
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-            {name: "Name", image: nick},
-        ]
+        const results =
 
         results.forEach((result) => {
             html += `<div class="project-element all-projects"><img src="${result.image}"> <div class="name-container">${result.name}</div></div>`
